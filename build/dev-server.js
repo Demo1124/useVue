@@ -24,11 +24,17 @@ var proxyTable = config.dev.proxyTable
 
 var app = express()
 var appData = require('../mycontents.json')
-var goods = appData.mycontents
+var mycontents = appData.mycontents
+var loginuser = appData.loginuser
 var apiRoutes = express.Router()
 apiRoutes.get('/mycontents',function(req,res){
   res.json({
-    data: goods
+    data: mycontents
+  })
+})
+apiRoutes.get('/loginuser',function(req,res){
+  res.json({
+    data: loginuser
   })
 })
 app.use('/api', apiRoutes)
