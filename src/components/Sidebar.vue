@@ -1,5 +1,5 @@
 <template>
-  <div class="panel panel-default" style="width: 150px">
+  <div class="panel panel-default" style="width: 150px;">
     <div class="panel-body">
       <ul class="nav nav-pills nav-stacked" >
         <li><router-link to="/time-entries"><i class="glyphicon glyphicon-user"></i><i class="glyphicon glyphicon-user" style="left:-7px"></i>好友动态</router-link></li>

@@ -14,13 +14,12 @@ var contents = appData.mycontents
 var loginuser = appData.loginuser
 
 const state = {
-  list: contents
+  list: contents,
+  user:loginuser
 }
 
 export default new Vuex.Store({
-  contents,
   mutations,
   actions,
-  loginuser,
   state
 })

@@ -3,51 +3,61 @@
     {
       "name": "用户1",
       "content": "内容111111111111",
+      "date":"08:54",
       "img": "../static/1.png"
     },
     {
       "name": "用户2",
       "content": "内容222222222222",
+      "date":"09:44",
       "img": "../static/2.png"
     },
     {
       "name": "用户3",
       "content": "内容333333333333",
+      "date":"10:22",
       "img": "../static/3.png"
     },
     {
       "name": "用户4",
       "content": "内容444444444444",
+      "date":"昨天 20:03",
       "img": "../static/4.png"
     },
     {
       "name": "用户5",
       "content": "内容555555555555",
+      "date":"昨天 19:23",
       "img": "../static/5.png"
     },
     {
       "name": "用户6",
       "content": "内容666666666666",
+      "date":"昨天 16:01",
       "img": "../static/6.png"
     },
     {
       "name": "用户7",
       "content": "内容777777777777",
+      "date":"前天 20:03",
       "img": "../static/7.png"
     },
     {
       "name": "用户8",
       "content": "内容888888888888",
+      "date":"前天 23:23",
       "img": "../static/8.png"
     },
     {
       "name": "用户9",
       "content": "内容999999999999",
+      "date":"前天 00:02",
       "img": "../static/9.png"
     },
     {
       "name": "1用户0",
       "content": "内容101010101010101010101010",
+      "date":"前天 07:54",
       "img": "../static/10.png"
     }
   ],

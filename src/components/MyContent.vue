@@ -8,17 +8,21 @@
     </div>
     <a class="list-group-item" v-for="(mycontent,index) in mycontents">
       <div class="row">
-        <div class="col-sm-2">
-          <img :src="mycontent.img" class="img-circle img-responsive" />
-          <p class="text-center">
-            <strong>
+        <div class="col-sm-3">
+          <img :src="mycontent.img" class="img-circle img-responsive" style="width: 70px; height: 70px;float: left"/>
+          <div style="padding-top: 10px">
+            <span style="float: left;margin-left: 10px; ">
               {{ mycontent.name }}
-            </strong>
-          </p>
+            </span>
+          <br>
+          <span style="float: left;margin-left: 10px;font-size: 0.8em;color:#94998a">
+              {{ mycontent.date }}
+            </span>
+          </div>
         </div>
 
-        <div class="col-sm-10 text-center time-block">
-          <h3 class="list-group-item-text total-time">
+        <div class="col-sm-10 text-center ">
+          <h3 class="list-group-item-text" style="text-align: left">
             {{ mycontent.content }}
           </h3>
         </div>
