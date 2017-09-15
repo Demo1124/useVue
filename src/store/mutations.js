@@ -6,7 +6,9 @@ export default {
     console.log(state);
     // const loginname = loginuser[0].loginname;
     // const img=loginuser[0].img;
-    state.list.unshift(Object.assign({"content":newthing,"img":state.user[0].img,"name":state.user[0].loginname,"date":new Date("hh:mm")}));
+    var nowdata = new Date();
+    var indata = nowdata.getHours()+":"+nowdata.getMinutes();
+    state.list.unshift(Object.assign({"content":newthing,"img":state.user[0].img,"name":state.user[0].loginname,"date":indata}));
   }
 
 }

@@ -4,14 +4,14 @@
       <div class="container">
         <div v-if="loginuser[0]" >
           <div class="loginname">
-            <h2  style="text-align: left;color:#7aa621">{{loginuser[0].loginname}}的QQ空间</h2>
+            <h2  style="text-align: left;color: rgba(0, 0, 0, .5);">{{loginuser[0].loginname}}的QQ空间</h2>
           </div>
           <div class="headlink" style="margin-top: 80px">
             <img :src="loginuser[0].img" class=" img-rounded img-responsive" style="width: 90px;height: 90px;float:left;"/>
-            <h4 style="text-align: left;padding:30px 0 0 110px;color:#7aa621">{{loginuser[0].loginname}}</h4>
+            <h4 style="text-align: left;padding:30px 0 0 110px;color: rgba(0, 0, 0, .5);">{{loginuser[0].loginname}}</h4>
           </div>
         </div>
-        <ul class="nav navbar-nav" style="padding-left: 20px;color:#080504">
+        <ul class="nav navbar-nav" style="padding-left: 20px;" id="headul">
           <li><router-link to="">主页</router-link></li>
           <li><router-link to="">日志</router-link></li>
           <li><router-link to="">相册</router-link></li>
@@ -41,5 +41,12 @@
   #headul li{
     float: left;
     margin: 0 10px;
+
+  }
+  a{
+    color:#a6a6a6;
+  }
+  .navbar-default .navbar-nav > li > a {
+    color: #333;
   }
 </style>
