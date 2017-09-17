@@ -11,7 +11,7 @@
         </transition>
       </div>
     </div>
-    <a class="list-group-item" v-for="(mycontent,index) in mycontents" style="background-color: #2e2e2e;border: none;margin: 10px 0">
+    <a class="list-group-item" v-for="(mycontent,index) in mycontents" style="background-color: #2e2e2e;border: none;margin: 10px 0" >
       <div class="row" >
         <div class="col-sm-3">
           <img :src="mycontent.img" class="img-circle img-responsive" style="width: 70px; height: 70px;float: left"/>
@@ -30,9 +30,10 @@
           <h3 class="list-group-item-text" style="text-align: left;color:#94998a">
             {{ mycontent.content }}
           </h3>
-          <span v-if="likecount">{{likecount}}</span>
           <div style="float: right;" class="contentbtn">
-            <button class=" btn-lg" @click="addlike" :id="index"><i class="glyphicon glyphicon-thumbs-up"></i></button>
+            <!--<button  class=" btn-lg"><i class="glyphicon glyphicon-thumbs-up" @click="add"></i></button>-->
+            <like-counter class=" btn-lg"></like-counter>
+            <test ></test>
             <button class=" btn-lg"><i class="glyphicon glyphicon-comment"></i></button>
             <button class=" btn-lg"><i class="glyphicon glyphicon-share-alt"></i></button>
           </div>
@@ -49,6 +50,7 @@
 <script>
   import $ from 'jquery'
   import 'jquery'
+  import Vue from 'vue'
   import '../assets/jquery.qqFace.js'
   $(function(){
 
@@ -88,12 +90,11 @@
 
   }
 
-  export default {
+export default {
     data() {
       return {
         inputthing:'',
         show:false,
-        likecount: 0
     }
     },computed : {
       mycontents () {
@@ -103,18 +104,38 @@
     },
     methods:{
       save(){
-        if(this.inputthing)
+        if(this.inputthing){
           this.$store.dispatch('savething',this.inputthing);
+          this.inputthing=''
+        }
         else{
           alert("请填写内容！")
         }
-      },
-      addlike(){
-        this.likecount+=1;
       }
     }
   }
+  var Event = new Vue();
 
+  Vue.component('like-counter', {
+    template: '<button v-on:click="addlike"><i class="glyphicon glyphicon-thumbs-up" ></i><span v-if="counter"></span></button>',
+    data: function () {
+      return {counter:0}
+    },methods:{
+      addlike:function(){
+        Event.$emit('doaddlike',this.counter+1);
+      }
+    }
+  })
+
+  Vue.component('test', {
+    template: '<input>{{ testcount }}</input>',
+    data:function(){return {testcount:''}},
+    mounted:function(){
+      Event.$on('doaddlike',function(data){
+        this.testcount = data;
+      })
+    }
+  })
 </script>
 <style>
   .contentbtn > button{
